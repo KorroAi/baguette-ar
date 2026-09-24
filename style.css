@@ -176,8 +176,34 @@ h1 { font-size: 40px; margin: 8px 0 8px; letter-spacing: -0.02em; }
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25);
   padding: 0;
 }
-.swatch.rainbow { background: conic-gradient(#ff2e88, #ffe600, #39ff14, #00e5ff, #b14cff, #ff2e88); }
+.swatch.mode-rainbow { background: conic-gradient(#ff2e88, #ffe600, #39ff14, #00e5ff, #b14cff, #ff2e88); }
+.swatch.mode-iris { background: conic-gradient(from 40deg, #a8f0ff, #f3b8ff, #fff3a8, #b8ffd9, #c4c8ff, #a8f0ff); }
+.swatch.mode-feu { background: radial-gradient(circle at 50% 70%, #fff3a0, #ffb000 35%, #ff3d00 70%, #9a1000); }
+.swatch.mode-aurore { background: linear-gradient(160deg, #1affa0, #339cff 55%, #b44dff); }
+.swatch.mode-or { background: linear-gradient(135deg, #7a4e0e, #ffe08a 45%, #fff6d0 52%, #a8741c); }
 .swatch.active { border-color: #fff; box-shadow: 0 0 12px var(--c, #fff); }
+.row-sep { flex: 0 0 1px; align-self: stretch; background: var(--glass-border); margin: 4px 2px; }
+
+.pill-btn {
+  height: 44px;
+  padding: 0 16px 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pill-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pill-btn.active { background: linear-gradient(90deg, #ff2e88, #b14cff); border-color: transparent; box-shadow: 0 0 16px rgba(255, 46, 136, 0.5); }
+#overlay .pill-btn { pointer-events: auto; }
+
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--muted); padding: 6px 4px 4px; line-height: 1.4; }
+.check input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
 
 .slider { display: grid; grid-template-columns: 96px 1fr 52px; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); padding: 4px 4px; }
 .slider output { text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }

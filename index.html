@@ -30,6 +30,27 @@
         <stop offset="0.75" stop-color="#00e5ff" />
         <stop offset="1" stop-color="#b14cff" />
       </linearGradient>
+      <linearGradient id="irisgrad" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#a8f0ff" />
+        <stop offset="0.35" stop-color="#f3b8ff" />
+        <stop offset="0.65" stop-color="#fff3a8" />
+        <stop offset="1" stop-color="#b8ffd9" />
+      </linearGradient>
+      <linearGradient id="feugrad" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#ff2e00" />
+        <stop offset="0.5" stop-color="#ffb000" />
+        <stop offset="1" stop-color="#ff4d00" />
+      </linearGradient>
+      <linearGradient id="auroregrad" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#1affa0" />
+        <stop offset="0.5" stop-color="#339cff" />
+        <stop offset="1" stop-color="#b44dff" />
+      </linearGradient>
+      <linearGradient id="orgrad" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#8a5a12" />
+        <stop offset="0.5" stop-color="#ffe08a" />
+        <stop offset="1" stop-color="#a8741c" />
+      </linearGradient>
     </defs>
   </svg>
 
@@ -40,7 +61,7 @@
         <svg viewBox="0 0 120 60"><path d="M8 44 C 30 4, 52 4, 60 30 S 92 56, 112 14" /></svg>
       </div>
       <h1>Baguette&nbsp;AR</h1>
-      <p class="lead">Dessine dans l'air de ta pièce avec ton téléphone. Les traits restent en place, tu peux tourner autour.</p>
+      <p class="lead">Dessine avec ton doigt dans l'air de ta pièce ou directement sur les murs et les objets. Les traits restent en place, tu peux tourner autour.</p>
       <button id="btn-ar" class="primary" disabled>Vérification…</button>
       <button id="btn-preview" class="ghost">Aperçu 3D sans AR</button>
       <p id="support-msg" class="small"></p>
@@ -52,6 +73,10 @@
     <div class="topbar ui">
       <button id="btn-exit" class="icon-btn" aria-label="Quitter">
         <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <button id="btn-surface" class="pill-btn" aria-label="Dessiner sur les surfaces">
+        <svg viewBox="0 0 24 24"><path d="M3 17l9 4 9-4M3 12l9 4 9-4" /><path d="M3 7l9-4 9 4-9 4z" /></svg>
+        <span>Surface</span>
       </button>
       <div class="spacer"></div>
       <button id="btn-undo" class="icon-btn" aria-label="Annuler">
@@ -76,6 +101,8 @@
         <label class="slider"><span>Épaisseur</span><input id="sl-size" type="range" min="1" max="20" step="1" /><output id="out-size"></output></label>
         <label class="slider"><span>Distance</span><input id="sl-dist" type="range" min="10" max="80" step="1" /><output id="out-dist"></output></label>
         <label class="slider"><span>Taille forme</span><input id="sl-shape" type="range" min="5" max="80" step="1" /><output id="out-shape"></output></label>
+        <label class="slider"><span>Réalisme surface</span><input id="sl-real" type="range" min="0" max="100" step="5" /><output id="out-real"></output></label>
+        <label class="check"><input id="chk-flip" type="checkbox" /><span>Inverser la texture caméra (si la peinture montre un reflet à l'envers)</span></label>
       </div>
       <nav class="tabs">
         <button data-tab="brush">Pinceaux</button>
